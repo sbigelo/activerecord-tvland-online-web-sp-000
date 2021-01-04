@@ -4,7 +4,7 @@ class Show < ActiveRecord::Base
   has_many :characters
 
   def actors_list
-
+    self.actors.map{|key| "#{key.first_name} #{key.last_name}"}
   end
 
 
