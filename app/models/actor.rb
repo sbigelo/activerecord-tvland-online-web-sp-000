@@ -6,4 +6,10 @@ class Actor < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  def list_roles
+    characters.collect do |key|
+      "#{key.name} #{key.show.name}"
+    end
+  end
+
 end
